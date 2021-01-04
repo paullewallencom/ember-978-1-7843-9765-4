@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2014 by will-hart (http://jsbin.com/nahut/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<title>Ember Starter Kit</title>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v1.3.0.js"></script>
+  <script src="http://builds.emberjs.com/tags/v1.6.0/ember.js"></script>
+
+<style id="jsbin-css">
+/* Put your CSS here */
+html, body {
+    margin: 20px;
+}
+</style>
+</head>
+<body>
+
+  <script type="text/x-handlebars">
+    {{outlet}}    
+  </script>
+  <script type="text/x-handlebars" data-template-name="index">
+    {{#link-to "walks"}}View Walks{{/link-to}}
+  </script>
+  
+  <script type="text/x-handlebars" data-template-name="walks">
+    {{#link-to "index"}}Return home{{/link-to}}
+  </script>
+
+<script>
+App = Ember.Application.create();
+
+App.Router.map(function () {
+  this.route("walks", {path: "list_walks"});
+});
+</script>
+</body>
+</html>

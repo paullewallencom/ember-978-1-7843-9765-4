@@ -1,0 +1,172 @@
+html, body 
+{
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{
+    background: #eee;
+}
+
+.main-container 
+{
+    max-width: 960px;
+    width: 960px;
+    margin: 1em auto;
+    background: white;
+}
+
+.menu 
+{
+    text-align: right;
+    padding: 1em;
+    background: #9CF;
+}
+
+    .menu a, .walk-header a
+        {
+        text-decoration: none;
+        font-weight: bold;
+        color: #222;
+    }
+
+    .menu a:hover, .walk-header a:hover
+        {
+        color: #27C;
+    }
+
+.walk-list li 
+{
+    padding: 1em 0.5em;
+    margin: 0 0.5em;
+}
+
+.walk-list li:hover
+{
+    background: #EEE;
+}
+
+.header 
+{
+    background: #27C;
+    margin: 0;
+    color: white;
+    padding: 0.5em;
+}
+
+.walk-header
+{
+    list
+}
+
+.walk-list, .walk-details
+{
+    padding-left: 0;
+    list-style-type: none;
+}
+
+    .walk-details span 
+        {
+        font-weight: bold;
+        min-width: 150px;
+        display: inline-block;
+    }
+
+    .walk-list span
+        {
+        display: block;
+        font-size: 0.8em;
+        font-weight: normal;
+        font-style: italic;
+        color: #888;
+    }
+
+.add-walk-form 
+{
+    margin-top: 1em;
+}
+
+    .add-walk-form input, .add-walk-form select
+        {
+        display:block;
+        font-size: 1.5em;
+        padding: 0.3em;
+        margin: 0.2em 0 0.5em 0;
+        width: 80%;
+    }
+
+#add-button
+{
+    background: #27c;
+    color: white;
+    border: 0;
+    padding: 1em;
+    width: 100px;
+    margin: 0.2em 0 0.5em;
+    clear: both;
+    display: block;
+}
+
+#add-button:hover
+{
+    background: #9CF;
+}
+    
+.mood-button 
+{
+    margin: 0 0 1em 0;
+    padding: 0.5em 1em;
+    background: #DDD;
+    color: black;
+    border: 0;
+    min-width: 80px;
+    float:left;
+    outline: none;
+}
+
+.mood-button:hover
+{
+    background: #CCC;
+}
+
+.selected, .selected:hover
+{
+    background: #9CF;
+}
+
+.form-error
+{
+    color: #A22;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.mood
+{
+    display: inline;
+}
+
+.is-good 
+{
+    color:green;
+}
+
+.is-not-good 
+{
+    color:red;
+}
+
+.report-item 
+{
+    text-align: center;
+    margin: 1em auto 2em auto;
+}
+
+    .report-item span
+    {
+        margin: 0.2em auto;
+        display: block;
+        height: 75px;
+        font-size: 5em;
+    }

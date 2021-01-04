@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exermatic </title>
+
+        <link rel="stylesheet" href="css/main.css">
+
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.js"></script>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ember.js/1.6.1/ember.min.js"></script>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.8/ember-data.min.js"></script>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ember-localstorage-adapter/0.3.1/localstorage_adapter.js"></script>
+
+        <script type="text/javascript" src="js/application.js"></script>
+
+    </head>
+    <body>
+        <script type="text/x-handlebars">
+            <h1>Exermatic</h1>
+            {{outlet}}
+        </script>
+        
+        <script type="text/x-handlebars" data-template-name="walks">
+            {{#link-to "walks.add"}}+ Add Walk{{/link-to}}
+        
+            {{#if content.length}}
+                <ul>
+                {{#each content}}
+                    <li class="walk-header">
+                        {{#link-to "walks.walk" this}}Walk {{this.id}}{{/link-to}}
+                        <span>On {{this.dateWalked}}</span>
+                    </li>
+                {{/each}}
+                </ul>
+            {{else}}
+                <p>There are no walks!</p>
+            {{/if}}
+            
+            {{outlet}}
+        </script>
+        
+        <script type="text/x-handlebars" data-template-name="walks/add">
+            <h3>Create a new walk</h3>
+            
+            {{error}}
+        
+            {{input type="text" id="new-date" value=newDate placeholder="YYYY-MM-DDTHH:mm:ss"}}
+            {{input type="text" id="new-distance" value=newDistance placeholder="Distance Walked"}}
+            {{input type="text" id="new-time" value=newTime placeholder="Time Taken"}}
+            {{input type="text" id="new-mood" value=newMood placeholder="Good / OK / Bad"}}
+            
+            <button {{action "addWalk"}}>Add</button>
+        </script>
+        
+        <script type="text/x-handlebars" data-template-name="walks/walk">
+            <h3>Walk Details</h3>
+            
+            <ul>
+             <li>Walk: {{id}}</li>
+             <li>Date Walked: {{dateWalked}}</li>
+             <li>Distance Walked: {{distanceWalked}}</li>
+             <li>Time Taken: {{minutesTaken}}</li>
+             <li>Mood: {{mood}}</li>
+             <li>Speed: {{kmPerHour}}kph</li>
+            </ul>
+        </script>
+    </body>
+</html>
